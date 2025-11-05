@@ -1,0 +1,71 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "toolbar": {
+    "code_actions": false,
+    "agent_review": false,
+    "selections_menu": false,
+    "quick_actions": false,
+    "breadcrumbs": false
+  },
+  "preview_tabs": {
+    "enabled": true
+  },
+  "status_bar": {
+    "cursor_position_button": true
+  },
+  "debugger": {
+    "button": true
+  },
+  "zoomed_padding": true,
+  "use_system_window_tabs": false,
+  "tab_bar": {
+    "show_nav_history_buttons": true,
+    "show": true
+  },
+  "title_bar": {
+    "show_user_picture": false,
+    "show_menus": false,
+    "show_branch_name": false,
+    "show_project_items": false,
+    "show_branch_icon": false,
+    "show_onboarding_banner": false,
+    "show_sign_in": false
+  },
+  "icon_theme": "Colored Zed Icons Theme Dark",
+  "calls": {
+    "mute_on_join": true
+  },
+  "disable_ai": true,
+  "project_panel": {
+    "button": true,
+    "entry_spacing": "standard",
+    "dock": "right"
+  },
+  "bottom_dock_layout": "contained",
+  "tabs": {
+    "close_position": "right",
+    "file_icons": true,
+    "git_status": true
+  },
+  "ui_font_weight": 500.0,
+  "ui_font_family": "Maple Mono Normal",
+  "buffer_font_family": "Fantasque Sans Mono",
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+  "ui_font_size": 18.0,
+  "buffer_font_size": 16.0,
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "Carbonfox"
+  }
+}

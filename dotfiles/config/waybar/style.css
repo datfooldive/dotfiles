@@ -1,0 +1,156 @@
+@define-color foreground #f0f0f0;
+@define-color background #222222;
+@define-color border-color #505050;
+@define-color recording-active #ff8066;
+
+* {
+  background-color: transparent;
+  color: @foreground;
+  border: none;
+  border-radius: 0;
+  min-height: 0;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+window#waybar {
+  background-color: transparent;
+}
+
+#tray menu {
+  background-color: @background;
+}
+
+.modules-left,
+.modules-right {
+  margin-top: 8px;
+  margin-bottom: 2px;
+}
+
+.modules-left {
+  margin-left: 12px;
+}
+
+.modules-right {
+  margin-right: 12px;
+}
+
+#custom-menu {
+  background-color: @background;
+  color: @foreground;
+  border: 1px solid @border-color;
+  border-radius: 0px;
+  padding-left: 8px;
+  padding-right: 12px;
+}
+
+#workspaces,
+#title,
+#clock,
+#custom-screenrecording-indicator,
+#cava,
+#custom-playerctl,
+#tray,
+#network,
+#pulseaudio,
+#cpu,
+#battery,
+#custom-power {
+  background: @background;
+  border: 1px solid @border-color;
+  border-radius: 0px;
+  padding: 2px 8px;
+  margin: 0 3px;
+}
+
+#taskbar {
+	background: @background;
+	border: 1px solid @border-color;
+	border-radius: 0px;
+	padding: 0px;
+	margin: 0 3px;
+}
+#workspaces {
+  margin-left: 6px;
+}
+
+#workspaces button {
+  all: initial;
+  padding: 0 4px;
+  margin: 0 1.5px;
+  min-width: 4px;
+}
+
+#workspaces button label {
+	font-family: "Noto Sans CJK SC", "Maple Mono Normal NF";
+	font-weight: 500;
+}
+
+#workspaces button.empty {
+  opacity: 0.5;
+}
+
+#window {
+  margin-left: 8px;
+}
+
+#cpu,
+#battery,
+#pulseaudio,
+#custom-notification {
+  margin-right: 3px;
+  padding-left: 12px;
+}
+
+#custom-power {
+	padding-left: 7px;
+	padding-right: 1px;
+}
+
+#pulseaudio {
+  margin-right: 4px;
+}
+
+#network {
+  padding-left: 12px;
+  margin-right: 4px;
+}
+
+#cpu {
+  margin-right: 6px;
+  padding-right: 12px;
+}
+
+#battery {
+  margin-left: 0;
+  padding-right: 12px;
+}
+
+#tray {
+  margin-right: 2px;
+}
+
+#custom-expand-icon {
+  margin-right: 12px;
+}
+
+#custom-taskbar-expand-icon {
+  margin-left: 12px;
+}
+
+tooltip {
+  padding: 2px;
+  background-color: @background;
+  border: 1px solid @border-color;
+}
+
+#custom-screenrecording-indicator {
+  min-width: 12px;
+  font-size: 14px;
+	padding-left: 5px;
+}
+
+#custom-screenrecording-indicator.active {
+  color: @recording-active;
+}
+

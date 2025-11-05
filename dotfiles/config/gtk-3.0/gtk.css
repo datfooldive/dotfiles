@@ -1,0 +1,14 @@
+decoration,
+window,
+window.background,
+window.titlebar,
+messagedialog,
+menu,
+.context-menu,
+.popup {
+    border-radius: 0;
+}
+
+dialog {
+	padding: 6px;
+}

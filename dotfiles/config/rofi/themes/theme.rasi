@@ -1,0 +1,81 @@
+* {
+    bg-color: #1f1f1f;
+    bg-color-secondary: #242424;
+    bg-color-mask: #f0f0f0;
+
+    text-color: #f0f0f0;
+    text-color-secondary: #f0f0f0;
+
+    color-actived: #303030;
+
+		border-color: #484848;
+
+    spacing: 0px;
+}
+
+window {
+    width: 360px;
+    padding: 0px;
+    border: 1px;
+    border-color: @border-color;
+    background-color: @bg-color;
+
+    anchor: 0;
+    location: 0;
+}
+
+inputbar {
+    background-color: @bg-color;
+    padding: 6px;
+    children: ["entry"];
+}
+
+entry {
+    text-color: @text-color-secondary;
+    placeholder: "Search...";
+    padding: 4px;
+}
+
+listview {
+    scrollbar: false;
+    border: none;
+    background-color: @bg-color-secondary;
+    padding: 8px;
+    lines: 8;
+    spacing: 2px;
+}
+
+scrollbar {
+    handle-color: @bg-color-secondary;
+    margin: 0 0 0 4px;
+}
+
+element {
+    background-color: transparent;
+    text-color: @text-color;
+    padding: 8px;
+    spacing: 8px;
+    cursor: default;
+}
+
+element-icon {
+    size: 1.2em;
+}
+
+element.normal.normal,
+element.alternate.normal {
+    background-color: transparent;
+    text-color: @text-color-secondary;
+}
+
+element.normal.active,
+element.alternate.active {
+    background-color: @bg-color-mask;
+    text-color: @color-actived;
+}
+
+element.selected.normal {
+    background-color: @color-actived;
+    text-color: @text-color;
+}
+

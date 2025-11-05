@@ -1,0 +1,54 @@
+config:
+  backup: true
+  banner: true
+  create: true
+  dotpath: dotfiles
+  keepdot: false
+  link_dotfile_default: nolink
+  link_on_import: nolink
+  longkey: false
+dotfiles:
+  d_niri:
+    src: config/niri
+    dst: ~/.config/niri
+  d_waybar:
+    src: config/waybar
+    dst: ~/.config/waybar
+  d_rofi:
+    src: config/rofi
+    dst: ~/.config/rofi
+  f_settings.json:
+    src: config/zed/settings.json
+    dst: ~/.config/zed/settings.json
+    chmod: '600'
+  d_mako:
+    src: config/mako
+    dst: ~/.config/mako
+  d_nvim:
+    src: config/nvim
+    dst: ~/.config/nvim
+  d_alacritty:
+    src: config/alacritty
+    dst: ~/.config/alacritty
+  f_wezterm.lua:
+    src: wezterm.lua
+    dst: ~/.wezterm.lua
+  f_gtk.css:
+    src: config/gtk-3.0/gtk.css
+    dst: ~/.config/gtk-3.0/gtk.css
+  d_swayosd:
+    src: config/swayosd
+    dst: ~/.config/swayosd
+profiles:
+  archlinux:
+    dotfiles:
+    - d_niri
+    - d_waybar
+    - d_rofi
+    - f_settings.json
+    - d_mako
+    - d_nvim
+    - d_alacritty
+    - f_wezterm.lua
+    - f_gtk.css
+    - d_swayosd

@@ -1,0 +1,15 @@
+configuration {
+	modi: "drun";
+  font: "Maple Mono Normal NF 15px";
+	sort: true;
+	drun-display-format: "{name}";
+  location: 0;
+  fixed-num-lines: true;
+  show-icons: true;
+	icon-theme: "Adwaita";
+  scroll-method: 1;
+  cycle: true;
+  matching: "fuzzy";
+}
+
+@import "theme"

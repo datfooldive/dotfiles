@@ -1,0 +1,196 @@
+{
+  "reload_style_on_change": true,
+  "layer": "top",
+  "position": "top",
+	"mode": "dock",
+	"exclusive": true,
+  "passthrough": false,
+  "gtk-layer-shell": true,
+  "spacing": 0,
+  "height": 0,
+  "modules-left": [
+		"niri/workspaces",
+		"cava",
+		"clock",
+		"custom/screenrecording-indicator",
+		"group/taskbar-expander"
+	],
+  "modules-right": [
+    "group/tray-expander",
+    "network",
+    "pulseaudio",
+    "cpu",
+    "battery",
+		"custom/power",
+  ],
+  "niri/workspaces": {
+    "on-click": "activate",
+    "format": "{icon}",
+    "format-icons": {
+			"1": "一",
+			"2": "二",
+			"3": "三",
+			"4": "四",
+			"5": "五",
+			"6": "六",
+			"7": "七",
+			"8": "八",
+			"9": "九",
+			"10": "十",
+			"active": "󱓻",
+		},
+		"persistent-workspaces": {
+			"1": [],
+			"2": [],
+			"3": [],
+			"4": [],
+			"5": [],
+		}
+	},
+  "custom/menu": {
+    "format": "󰣇",
+    "on-click": "rofi -show",
+    "tooltip": false,
+  },
+  "cpu": {
+    "interval": 5,
+    "format": "{usage}% 󰍛",
+    "on-click": "$TERMINAL --class=Htop -e htop",
+  },
+  "clock": {
+    "format": "{:L%A %I:%M %p}",
+    "format-alt": "{:L%d %B W%V %Y %I:%M %p}",
+    "tooltip": false,
+  },
+  "network": {
+    "format-icons": ["󰤯 ", "󰤟 ", "󰤢 ", "󰤥 ", "󰤨 "],
+    "format": "{icon}",
+    "format-wifi": "{bandwidthDownBytes}↓ {bandwidthUpBytes}↑ {icon}",
+    "format-ethernet": "{bandwidthDownBytes}↓ {bandwidthUpBytes}↑ 󰀂 ",
+    "format-disconnected": "󰤮 ",
+    "tooltip-format-wifi": "{essid} ({frequency} GHz)\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+    "tooltip-format-ethernet": "⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+    "tooltip-format-disconnected": "Disconnected",
+    "interval": 3,
+    "spacing": 1,
+    "on-click": "$TERMINAL --class=Impala -e impala",
+  },
+  "battery": {
+    "format": "{capacity}% {icon}",
+    "format-discharging": "{capacity}% {icon}",
+    "format-charging": "{capacity}% {icon}",
+    "format-plugged": "",
+    "format-icons": {
+      "charging": ["󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"],
+      "default": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+    },
+    "format-full": "󰂅",
+    "tooltip-format-discharging": "{power:>1.0f}W↓ {capacity}%",
+    "tooltip-format-charging": "{power:>1.0f}W↑ {capacity}%",
+    "interval": 5,
+    "states": {
+      "warning": 20,
+      "critical": 10,
+    },
+  },
+
+  "pulseaudio": {
+    "format": "{volume}% {icon}",
+    "on-click": "$TERMINAL --class=Wiremix -e wiremix",
+    "on-click-right": "pamixer -t",
+    "tooltip-format": "Playing at {volume}%",
+    "scroll-step": 5,
+    "format-muted": " ",
+    "format-icons": {
+			"headphone": " ",
+      "hands-free": " ",
+      "headset": " ",
+      "default": ["", " ", " "]
+    }
+  },
+	"pulseaudio#microphone": {
+    "format": "{format_source}",
+    "format-source": " {volume}%",
+    "tooltip": false,
+    "format-source-muted": " Muted",
+    "on-click": "pamixer --default-source -t",
+    "on-scroll-up": "pamixer --default-source -i 2",
+    "on-scroll-down": "pamixer --default-source -d 2",
+    "scroll-step": 5
+  },
+  "group/tray-expander": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 600,
+      "children-class": "tray-group-item",
+    },
+    "modules": ["custom/expand-icon", "tray"],
+  },
+  "custom/expand-icon": {
+    "format": "",
+    "tooltip": false,
+  },
+  "group/taskbar-expander": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 600,
+      "children-class": "taskbar-group-item",
+			 "transition-left-to-right": false,
+    },
+    "modules": ["custom/taskbar-expand-icon", "wlr/taskbar"],
+  },
+  "custom/taskbar-expand-icon": {
+    "format": "",
+    "tooltip": false,
+  },
+  "custom/screenrecording-indicator": {
+    "exec": "~/.config/waybar/scripts/indicator-screenrecord.sh",
+    "signal": 8,
+    "return-type": "json",
+    "on-click": "~/.config/niri/scripts/screenrecord.sh",
+  },
+  "tray": {
+    "icon-size": 12,
+    "spacing": 17,
+  },
+  "niri/window": {
+    "format": "{title}",
+    "max-length": 30
+  },
+	"cava": {
+		"framerate": 30,
+    "autosens": 0,
+    "sensitivity": 40,
+    "bars": 10,
+    "lower_cutoff_freq": 50,
+    "higher_cutoff_freq": 12000,
+    "method": "pulse",
+    "hide_on_silence": false,
+    "source": "auto",
+    "stereo": false,
+    "bar_delimiter": 0,
+    "monstercat": false,
+    "waves": false,
+    "noise_reduction": 0.3,
+    "input_delay": 0,
+    "format-icons" : ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█" ],
+		"actions": {
+			"on-click-right": "mode"
+		}
+	},
+	"wlr/taskbar": {
+		"format": "{icon}",
+		"icon-size": 16,
+		"all-outputs": false,
+		"tooltip-format": "{title}",
+		"markup": true,
+		"on-click": "activate",
+		"on-click-right": "close",
+		"ignore-list": ["Rofi", "wofi", "Alacritty"]
+	},
+	"custom/power": {
+		"format": " ",
+		"tooltip": false,
+		"on-click": "~/.config/niri/scripts/powermenu.sh",
+	},
+}
